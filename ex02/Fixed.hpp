@@ -38,7 +38,7 @@ class Fixed{
 
 		static Fixed &	max( Fixed & p1, Fixed & p2);
 		static const Fixed &	max( Fixed const & p1, Fixed const & p2);
-		static Fixed &	min( Fixed & p1, Fixed & p2);
+		static Fixed &	min( Fixed & p1, Fixed & p2);	
 		static const Fixed &	min( Fixed const & p1, Fixed const & p2);
 
 		float		toFloat( void ) const;

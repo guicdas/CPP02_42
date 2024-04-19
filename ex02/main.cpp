@@ -2,7 +2,7 @@
 
 int main( void ) 
 {
-	// /*
+	
 	Fixed a;
 	Fixed const ac(4.04f);
 	Fixed b(3);
@@ -41,18 +41,18 @@ int main( void )
 	std::cout << "min:\t\t" << Fixed::min( a, b ) << std::endl;
 	std::cout << "max const:\t" << Fixed::max( ac, bc ) << std::endl;
 	std::cout << "min const:\t" << Fixed::min( ac, bc ) << std::endl;
-	// */
-	 /*
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	 */
+	
+	
+	// Fixed a;
+	// Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	// std::cout << a << std::endl;
+	// std::cout << ++a << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << a++ << std::endl;
+	// std::cout << a << std::endl;
+	// std::cout << b << std::endl;
+	// std::cout << Fixed::max( a, b ) << std::endl;
+	
 	return 0;
 
 }

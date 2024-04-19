@@ -9,12 +9,9 @@ class Fixed{
 	public:
 		Fixed();
 		Fixed( const Fixed &n );
+		Fixed &		operator=( Fixed const & rhs);
 		~Fixed();
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
-		// Fixed		operator+( Fixed const & rhs) const;
-		Fixed &		operator=( Fixed const & rhs);
 };
-
-// std::ostream & operator<<( std::ostream & o, Fixed const & rhs);

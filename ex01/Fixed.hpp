@@ -10,14 +10,13 @@ class Fixed{
 	public:
 		Fixed();
 		Fixed( const Fixed &n );
+		Fixed &		operator=( Fixed const & rhs);
+		~Fixed();
 		Fixed( const int n );
 		Fixed( const float n );
-		~Fixed();
 
 		int			getRawBits( void ) const;
 		void		setRawBits( int const raw );
-		// Fixed		operator+( Fixed const & rhs) const;
-		Fixed &		operator=( Fixed const & rhs);
 		float		toFloat( void ) const;
 		int			toInt( void ) const;
 };
