@@ -1,27 +1,23 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed() : value(0){
-}
+Fixed::Fixed( void ) : value(0){}
 
-Fixed::Fixed( const Fixed &n ){
+Fixed::Fixed( Fixed const &n ){
 	*this = n;
 }
 
-Fixed&	Fixed::operator=( Fixed const & rhs){
-	if (this != &rhs)
-		this->value = rhs.getRawBits();
-	return *this;
+Fixed&	Fixed::operator=( Fixed const &f ){
+	if (this == &f)
+		return (*this);
+	this->value = f.value;
+	return (*this);
 }
 
-Fixed::Fixed( const int n ) : value(n << fractionBits){
-}
+Fixed::Fixed( const int n ) : value(n << fractionBits){}
 
-Fixed::Fixed( const float n ) :value(roundf(n * (1 << fractionBits))){
-}
+Fixed::Fixed( const float n ) :value(roundf(n * (1 << fractionBits))){}
 
-Fixed::~Fixed(){
-	//std::cout << (this->value >> this->fractionBits) << " Destructor called\n";
-}
+Fixed::~Fixed( void ){}
 
 int Fixed::getRawBits(void) const{
 	return (this->value);

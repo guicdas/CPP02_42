@@ -4,14 +4,18 @@
 
 class Fixed{
 	private:
-		int value;
-		static const int	fractionBits = 8;
-	public:
-		Fixed();
-		Fixed( const Fixed &n );
-		Fixed &		operator=( Fixed const & rhs);
-		~Fixed();
+		static int const	fractionBits = 8;
+		int					value;
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
+	public:
+		Fixed( void );
+		Fixed::Fixed( int const raw );
+		Fixed( const Fixed & );
+		Fixed	&operator=( Fixed const & );
+		~Fixed( void );
+
+	int		getRawBits( void ) const;
+	void	setRawBits( int const );
 };
+
+std::ostream &operator<<( std::ostream &os, Fixed &f );

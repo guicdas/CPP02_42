@@ -5,44 +5,44 @@
 
 class Fixed{
 	private:
-		int					value;
 		static const int	fractionBits = 8;
+		int					value;
+
 	public:
-		Fixed();
-		Fixed( const Fixed &n );
-		Fixed( const int n );
-		Fixed( const float n );
-		~Fixed();
+		Fixed( void );
+		Fixed( int const );
+		Fixed( float const );
+		Fixed( Fixed const & );
+		Fixed	&Fixed::operator=( Fixed const & );
+		~Fixed( void );
 
-		Fixed&	Fixed::operator=( Fixed const & rhs);
+	int		getRawBits( void ) const;
+	void	setRawBits( int const );
 
-		int			getRawBits( void ) const;
-		void		setRawBits( int const raw );
+	Fixed	operator+( Fixed const & ) const;
+	Fixed	operator-( Fixed const & ) const;
+	Fixed	operator*( Fixed const & ) const;
+	Fixed	operator/( Fixed const & ) const;
 
-		Fixed		operator+( Fixed const & rhs) const;
-		Fixed		operator-( Fixed const & rhs) const;
-		Fixed		operator*( Fixed const & rhs) const;
-		Fixed		operator/( Fixed const & rhs) const;
+	Fixed	operator>( Fixed const & ) const;
+	Fixed	operator<( Fixed const & ) const;
+	Fixed	operator>=( Fixed const & ) const;
+	Fixed	operator<=( Fixed const & ) const;
+	Fixed	operator!=( Fixed const & ) const;
+	Fixed	operator==( Fixed const & ) const;
 
-		Fixed		operator>( Fixed const & rhs) const;
-		Fixed		operator<( Fixed const & rhs) const;
-		Fixed		operator>=( Fixed const & rhs) const;
-		Fixed		operator<=( Fixed const & rhs) const;
-		Fixed 		operator!=( Fixed const & rhs) const;
-		Fixed 		operator==( Fixed const & rhs) const;
+	Fixed	&operator++( void );
+	Fixed 	operator++( int );
+	Fixed	&operator--( void );
+	Fixed 	operator--( int );
 
-		Fixed &		operator++(void);
-		Fixed 		operator++(int);
-		Fixed &		operator--(void);
-		Fixed 		operator--(int);
+	static Fixed		&max( Fixed & , Fixed & );
+	static const Fixed	&max( Fixed const & , Fixed const & );
+	static Fixed		&min( Fixed & , Fixed & );	
+	static const Fixed	&min( Fixed const & , Fixed const & );
 
-		static Fixed &	max( Fixed & p1, Fixed & p2);
-		static const Fixed &	max( Fixed const & p1, Fixed const & p2);
-		static Fixed &	min( Fixed & p1, Fixed & p2);	
-		static const Fixed &	min( Fixed const & p1, Fixed const & p2);
-
-		float		toFloat( void ) const;
-		int			toInt( void ) const;
+	float	toFloat( void ) const;
+	int		toInt( void ) const;
 };
 
-std::ostream & operator<<( std::ostream & o, Fixed const & rhs);
+std::ostream & operator<<( std::ostream & , Fixed const & );

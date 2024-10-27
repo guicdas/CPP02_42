@@ -3,10 +3,11 @@
 int main( void ) {
 	Fixed a;
 	Fixed b( a );
+	Fixed d( 12 );
 	Fixed c;
 	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	return 0;
+	std::cout << a;
+	std::cout << b;
+	std::cout << c;
+	std::cout << c;
 }
